@@ -5,10 +5,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent} from './components/product/product-list.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductListComponent
+    AppComponent, ProductListComponent, CartComponent
   ],
   imports: [
     BrowserModule,

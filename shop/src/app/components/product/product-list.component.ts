@@ -19,7 +19,8 @@ export class ProductListComponent implements OnInit {
 
     set listFilter(value: string) {
         this._listFilter = value;
-        this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+        this.filteredProducts = this.listFilter ? 
+                this.performFilter(this.listFilter) : this.products;
     }
 
     constructor ( private _productService: ProductService) {}
@@ -28,6 +29,10 @@ export class ProductListComponent implements OnInit {
         listFilter = listFilter.toLocaleLowerCase();
         return this.products.filter((product: Product) =>
         product.name.toLocaleLowerCase().indexOf(listFilter) !== -1);
+    }
+
+    onBuy(productId: number): void {
+        console.log('product with id: ' + productId + ' is added to cart');
     }
 
     ngOnInit() {

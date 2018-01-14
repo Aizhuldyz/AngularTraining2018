@@ -20,6 +20,7 @@
                     <th>Availability</th>
                     <th>Category</th>
                     <th>Ingredients</th>
+                    <th>Buy</th>
                 </thead>
                 <tbody>
                     <tr *ngFor ='let product of filteredProducts'>
@@ -29,6 +30,9 @@
                         <td>{{ product.isAvailable }}</td>
                         <td>{{ product.category }}</td>
                         <td>{{ product.ingredients }}</td> 
+                        <td><button (click) = 'onBuy(product.productId)' class='btn btn-primary'>
+                            Add To Cart
+                        </button></td>
                     <tr>
                 </tbody>
             </table>
