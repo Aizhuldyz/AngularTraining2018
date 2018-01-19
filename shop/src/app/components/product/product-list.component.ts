@@ -13,11 +13,11 @@ export class ProductListComponent implements OnInit {
     filteredProducts: Product[];
 
     _listFilter: string;
-    get listFilter(): string {
+    private get listFilter(): string {
         return this._listFilter;
     }
 
-    set listFilter(value: string) {
+    private set listFilter(value: string) {
         this._listFilter = value;
         this.filteredProducts = this.listFilter ? 
                 this.performFilter(this.listFilter) : this.products;
@@ -25,7 +25,7 @@ export class ProductListComponent implements OnInit {
 
     constructor ( private _productService: ProductService) {}
 
-    performFilter(listFilter: string): Product[] {
+    private performFilter(listFilter: string): Product[] {
         listFilter = listFilter.toLocaleLowerCase();
         return this.products.filter((product: Product) =>
         product.name.toLocaleLowerCase().indexOf(listFilter) !== -1);

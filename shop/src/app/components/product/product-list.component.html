@@ -29,7 +29,7 @@
                         <td>{{ product.price }}</td>
                         <td>{{ product.isAvailable }}</td>
                         <td>{{ product.category }}</td>
-                        <td>{{ product.ingredients }}</td> 
+                        <td><ul *ngFor = 'let ing of product.ingredients'><li>{{ ing }}</li></ul></td> 
                         <td><button (click) = 'onBuy(product.productId)' class='btn btn-primary'>
                             Add To Cart
                         </button></td>
