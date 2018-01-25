@@ -1,41 +1,15 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        {{pageTitle}}
-    </div>
+<div class="panel">
+        <span style="font-size: 18px; color: blue"> {{pageTitle}} </span>
     <div class="panel-body">
-        <div class="row">
+        <div style="margin-bottom: 10px; " class="row">
             <div class="col-md-2">
-                Filter by:
+                <span style="font-size: 18px; color: blue;">Filter by:</span>
             </div>
             <div class="col-md-4">
                 <input type="text" [(ngModel)]='listFilter'/>
             </div>
         </div>
-        <div class="table">
-            <table class="table">
-                <thead>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Availability</th>
-                    <th>Category</th>
-                    <th>Ingredients</th>
-                    <th>Buy</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor ='let product of filteredProducts'>
-                        <td>{{ product.name }}</td>   
-                        <td>{{ product.description }}</td>
-                        <td>{{ product.price }}</td>
-                        <td>{{ product.isAvailable }}</td>
-                        <td>{{ product.category }}</td>
-                        <td><ul *ngFor = 'let ing of product.ingredients'><li>{{ ing }}</li></ul></td> 
-                        <td><button (click) = 'onBuy(product.productId)' class='btn btn-primary'>
-                            Add To Cart
-                        </button></td>
-                    <tr>
-                </tbody>
-            </table>
-        </div>
+            <product-item *ngFor="let product of filteredProducts" [product] = 'product'>
+            </product-item>
     </div>
 </div>
