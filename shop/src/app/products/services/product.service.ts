@@ -38,7 +38,7 @@ export class ProductService {
                 'description': 'Butter made with organic whole milk',
                 'price': 23,
                 'category': Category.Imported,
-                'isAvailable' : true,
+                'isAvailable' : false,
                 'ingredients': ['milk', 'salt']
             },
             {

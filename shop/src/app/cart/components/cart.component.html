@@ -1,6 +1,8 @@
-<div *ngIf='!isEmpty()'>
-    <h4>Cart</h4>
-    <cart-item *ngFor='let cartItem of cartItems' [cartItem] = 'cartItem' (delete)='deleteFromCart($event)'
-    (increase) = 'increaseQuantity($event)' (decrease)='decreaseQuantity($event)'></cart-item>
-    <span> Total Sum : {{totalSum}}</span>
+<div *ngIf='!isEmpty()' class="panel">
+    <div class="panel-body">
+        <h4>Cart</h4>   
+        <cart-item *ngFor='let cartItem of cartItems' [cartItem] = 'cartItem' (delete)='deleteFromCart($event)'
+        (increase) = 'increaseQuantity($event)' (decrease)='decreaseQuantity($event)'></cart-item>
+        <span> Total Sum : {{totalSum}}</span>
+    </div>
 </div>

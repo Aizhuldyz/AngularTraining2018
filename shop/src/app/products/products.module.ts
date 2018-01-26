@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 
 import { ProductListComponent, ProductService, ProductComponent} from '.';
+import { AvailabilityCheckDirective } from './directives/availabilitycheck.directive';
 
 @NgModule( {
   imports: [
@@ -11,7 +12,7 @@ import { ProductListComponent, ProductService, ProductComponent} from '.';
     FormsModule
   ],
   declarations: [
-    ProductListComponent, ProductComponent
+    ProductListComponent, ProductComponent, AvailabilityCheckDirective
   ],
   exports: [ProductListComponent],
   providers: [ProductService]
