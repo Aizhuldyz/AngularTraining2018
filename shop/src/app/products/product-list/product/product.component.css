@@ -1,3 +1,7 @@
-.unbuyable {
-    
+.imported {
+    background-color: azure;
+}
+
+.local{
+    background-color: bisque;
 }

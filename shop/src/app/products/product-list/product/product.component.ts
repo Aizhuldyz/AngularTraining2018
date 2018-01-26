@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../../../models/product/product';
+import { Product, Category } from '../../../models/product/product';
 
 
 @Component({
@@ -18,7 +18,8 @@ export class ProductComponent {
 
     setClasses() {
         const classes = {
-            unbuyable: !this.product.isAvailable
+            imported: (this.product.category === Category.Imported),
+            local: (this.product.category === Category.Local)
         }
         return classes;
     }
