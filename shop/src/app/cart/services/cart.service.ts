@@ -57,4 +57,8 @@ export class CartService {
         }
         return new Array();
     }
+
+    getTotal(): number {
+        return this.cartList.reduce((a, b) => a + b.price * b.quantity, 0);        
+    }
 }
