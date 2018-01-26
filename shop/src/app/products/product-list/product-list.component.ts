@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { Product } from '../../models/product/product';
 import { ProductService } from '../services/product.service';
+
 
 @Component({
     selector: 'product-list',
     templateUrl: './product-list.component.html'
 })
 export class ProductListComponent implements OnInit {
+    @Output() addItemToCart: EventEmitter<Product> = new EventEmitter<Product>();
     pageTitle = 'Product List';
     products: Product[];
     filteredProducts: Product[];
@@ -31,8 +33,9 @@ export class ProductListComponent implements OnInit {
         product.name.toLocaleLowerCase().indexOf(listFilter) !== -1);
     }
 
-    onBuy(productId: number): void {
-        console.log('product with id: ' + productId + ' is added to cart');
+    addToCart(product: Product): void {
+        console.log('product with id: ' + product.productId + ' is added to cart');
+        this.addItemToCart.emit(product);
     }
 
     ngOnInit() {

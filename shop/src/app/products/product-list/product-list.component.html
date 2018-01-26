@@ -9,7 +9,7 @@
                 <input type="text" [(ngModel)]='listFilter'/>
             </div>
         </div>
-            <product-item *ngFor="let product of filteredProducts" [product] = 'product'>
+            <product-item *ngFor="let product of filteredProducts" [product] = 'product'(addToCart) = 'addToCart($event)'>
             </product-item>
     </div>
 </div>

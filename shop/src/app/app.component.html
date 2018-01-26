@@ -1,4 +1,4 @@
 <div><h1>{{pageTitle}}</h1>
-    <app-cart></app-cart>
-    <product-list></product-list>
+    <app-cart #cart (click)='0'></app-cart>
+    <product-list (addItemToCart) = 'cart.addToCart($event)'></product-list>
 </div>

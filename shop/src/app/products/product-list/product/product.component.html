@@ -5,7 +5,7 @@
     <h5>Availability: {{ product.isAvailable }}</h5>
     <h5>Category: {{ product.category }}</h5>
     <h5>Ingredients: <ul><li *ngFor = 'let ing of product.ingredients'>{{ ing }}</li></ul></h5> 
-    <button (click) = 'onBuy(product.productId)' class='btn btn-primary'>
+    <button (click) = 'onBuy(product)' class='btn btn-primary'>
         Add To Cart
     </button>
 </div>

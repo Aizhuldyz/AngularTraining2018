@@ -1,3 +1,5 @@
-<div *ngIf = '!isEmpty()'>
+<div *ngIf='!isEmpty()'>
     <h4>Cart</h4>
+    <cart-item *ngFor='let cartItem of cartItems' [cartItem] = 'cartItem' (delete)='deleteFromCart($event)'
+    (increase) = 'increaseQuantity($event)' (decrease)='decreaseQuantity($event)'></cart-item>
 </div>
