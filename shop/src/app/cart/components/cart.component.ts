@@ -8,8 +8,8 @@ import { Product } from '../../models/product/product';
     templateUrl: './cart.component.html'
 })
 export class CartComponent implements OnInit {
-    private cartItems: CartItem[];
-    private totalSum: number;
+    cartItems: CartItem[];
+    totalSum: number;
     constructor(private _cartService: CartService) {}
     
     isEmpty(): boolean {
