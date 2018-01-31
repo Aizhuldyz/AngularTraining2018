@@ -4,5 +4,6 @@
         <cart-item *ngFor='let cartItem of cartItems' [cartItem] = 'cartItem' (delete)='deleteFromCart($event)'
         (increase) = 'increaseQuantity($event)' (decrease)='decreaseQuantity($event)'></cart-item>
         <span> Total Sum : {{totalSum}}</span>
+        <span> Total Quantity: {{totalQuantity}}</span>
     </div>
 </div>

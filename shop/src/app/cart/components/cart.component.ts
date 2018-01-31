@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
-import { CartItem } from '../../models/cart/CartItem';
+import { CartItem } from '../../models/cart/cart-item.model';
 import { Product } from '../../models/product/product';
 
 @Component({
@@ -10,6 +10,7 @@ import { Product } from '../../models/product/product';
 export class CartComponent implements OnInit {
     cartItems: CartItem[];
     totalSum: number;
+    totalQuantity: number;
     constructor(private _cartService: CartService) {}
     
     isEmpty(): boolean {
@@ -18,21 +19,25 @@ export class CartComponent implements OnInit {
     increaseQuantity(productId: number): void {
         this._cartService.increaseQuantity(productId);
         this.totalSum = this._cartService.getTotal();
+        this.totalQuantity = this._cartService.getTotalQuantity();
     }
 
     decreaseQuantity(productId: number): void {
         this._cartService.decreaseQuantity(productId);
         this.totalSum = this._cartService.getTotal();
+        this.totalQuantity = this._cartService.getTotalQuantity();
     }
 
     deleteFromCart(productId: number): void {
         this._cartService.deleteFromCart(productId);
         this.totalSum = this._cartService.getTotal();
+        this.totalQuantity = this._cartService.getTotalQuantity();
     }
 
     addToCart(product: Product): void {
         this._cartService.addToCart(product);
         this.totalSum = this._cartService.getTotal();
+        this.totalQuantity = this._cartService.getTotalQuantity();
     }
 
     ngOnInit() {
