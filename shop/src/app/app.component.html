@@ -1,4 +1,5 @@
 <div><h1>{{pageTitle}}</h1>
+    <demo-app></demo-app>
     <app-cart #cart (click)='0'></app-cart>
     <product-list (addItemToCart) = 'cart.addToCart($event)'></product-list>
 </div>
