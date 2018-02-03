@@ -2,6 +2,6 @@
 WebinarSeriesAtEpam
 
 
-Built in pipe usage: Product.Component.html
-              async: product-list.component
+Built in pipe usage: Product.Component.html<br>
+              async: product-list.component<br>
 Order by custom pipe: product-list.component.html
