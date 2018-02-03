@@ -1,12 +1,14 @@
 <div class="panel">
         <span style="font-size: 18px; color: blue"> {{pageTitle}} </span>
+        <h4 *ngIf="(generatedCoupon | async)">New coupon available: {{generatedCoupon | async}}!</h4>
+        <span>{{data}}</span>
     <div class="panel-body">
         <div style="margin-bottom: 10px; " class="row">
             <div class="col-md-2">
                 <span style="font-size: 18px; color: blue;">Filter by:</span>
             </div>
             <div class="col-md-4">
-                <input type="text" #filter [(ngModel)]='listFilter'/>
+                <input type="text" [(ngModel)]='listFilter'/>
             </div>
         </div>
             <product-item *ngFor="let product of filteredProducts" [product] = 'product' (addToCart) = 'addToCart($event)'>
