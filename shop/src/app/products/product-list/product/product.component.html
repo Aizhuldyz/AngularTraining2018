@@ -1,7 +1,7 @@
 <div class="panel panel-primary product" [ngClass] = "setClasses()">
     <h5>Name: {{ product.name }}</h5>   
     <h5>Description: {{ product.description }}</h5>
-    <h5>Price: {{ product.price }}</h5>
+    <h5>Price: {{ product.price | currency:'USD':'code'}}</h5>
     <h5>Availability: {{ product.isAvailable }}</h5>
     <h5>Category: {{ product.category }}</h5>
     <h5>Ingredients: <ul><li *ngFor = 'let ing of product.ingredients'>{{ ing }}</li></ul></h5> 

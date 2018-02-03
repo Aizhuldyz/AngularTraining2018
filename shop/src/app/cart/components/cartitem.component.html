@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
     <h5>Name: {{ cartItem.name }}</h5>   
     <h5>Description: {{ cartItem.description }}</h5>
-    <h5>Price: {{ cartItem.price }}</h5> 
+    <h5>Price: {{ cartItem.price | currency: 'USD' }}</h5> 
     <h5>Quantity: {{ cartItem.quantity }}</h5>
     <button (click) = 'increaseQuantity(cartItem.productId)' class='btn btn-primary'>
         Increase
