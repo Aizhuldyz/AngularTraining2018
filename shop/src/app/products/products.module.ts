@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ProductListComponent, ProductService, ProductComponent} from '.';
 import { AvailabilityCheckDirective } from './directives/availabilitycheck.directive';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule( {
   imports: [
@@ -12,7 +13,7 @@ import { AvailabilityCheckDirective } from './directives/availabilitycheck.direc
     FormsModule
   ],
   declarations: [
-    ProductListComponent, ProductComponent, AvailabilityCheckDirective
+    ProductListComponent, ProductComponent, AvailabilityCheckDirective, OrderByPipe
   ],
   exports: [ProductListComponent],
   providers: [ProductService]
