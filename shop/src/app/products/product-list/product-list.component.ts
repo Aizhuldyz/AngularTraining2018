@@ -18,17 +18,18 @@ export class ProductListComponent implements OnInit {
     pageTitle = 'Product List';
     products: Product[];
     filteredProducts: Product[];
+    coupon: string;
 
     generatedCoupon = new Observable<string>((observer: Subscriber<string>) => {
         setInterval(() => observer.next(this._couponService.genarateRandom(5)), 2000);
       });
 
     _listFilter: string;
-    private get listFilter(): string {
+    public get listFilter(): string {
         return this._listFilter;
     }
 
-    private set listFilter(value: string) {
+    public set listFilter(value: string) {
         this._listFilter = value;
         this.filteredProducts = this.listFilter ? 
                 this.performFilter(this.listFilter) : this.products;

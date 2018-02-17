@@ -16,8 +16,9 @@ export class CartService {
     }
 
     addToCart(product: Product): void {
-        if (this.cartList.find(x => x.productId === product.productId)) {
-            this.cartList.find(x => x.productId === product.productId).quantity += 1;
+        const newproduct = this.cartList.find(x => x.productId === product.productId);
+        if (newproduct ) {
+            newproduct.quantity += 1;
         }else {
             const cartItem: CartItem = {
                 productId: product.productId,
@@ -31,16 +32,18 @@ export class CartService {
     }
 
     increaseQuantity(productId: number): void {
-        if (this.cartList.find(x => x.productId === productId)) {
-            this.cartList.find(x => x.productId === productId).quantity += 1;
+        const increasedProduct = this.cartList.find(x => x.productId === productId);
+        if (increasedProduct ) {
+            increasedProduct .quantity += 1;
         }
     }
 
     decreaseQuantity(productId: number): void {
-        if (this.cartList.find(x => x.productId === productId)) {
-            this.cartList.find(x => x.productId === productId).quantity -= 1;
+        const decreasedProduct = this.cartList.find(x => x.productId === productId);
+        if (decreasedProduct) {
+            decreasedProduct.quantity -= 1;
         }
-        if (this.cartList.find(x => x.productId === productId).quantity === 0) {
+        if (decreasedProduct.quantity === 0) {
             this.deleteFromCart(productId);
         }
     }
