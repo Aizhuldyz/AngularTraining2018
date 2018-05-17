@@ -1,2 +1,2 @@
 # AngularTraining2018
-WebinarSeriesAtEpam
+WebinarSeriesAtEpam - Check bracnhes for hometasks
